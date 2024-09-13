@@ -1,6 +1,6 @@
 // pages/api/data/route.ts
 import { NextResponse } from 'next/server';
-import pool from '../../../lib/db';
+import pool from '../../lib/db';
 
 // GET 方法，获取数据库中的数据
 export async function GET() {
