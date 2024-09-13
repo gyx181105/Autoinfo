@@ -2,28 +2,38 @@ import { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import dayjs from 'dayjs';
 
-interface NewsData {
+interface DailyNewsData {
   date: string;
-  newsCount: number;
+  newscount: number;
+}
+
+interface MonthlyNewsData {
+  month: string;
+  count: number;
 }
 
 const NewsCountChart = () => {
-  const [data, setData] = useState<NewsData[]>([]);
+  const [dailyData, setDailyData] = useState<DailyNewsData[]>([]);
+  const [monthlyData, setMonthlyData] = useState<MonthlyNewsData[]>([]);
 
   useEffect(() => {
-    // 获取新闻数量数据
     const fetchData = async () => {
       try {
         const response = await fetch('/api/news-count');
         const result = await response.json();
 
-        // 处理数据，将日期格式化，确保newsCount字段名称统一
-        const formattedData = result.map((item: any) => ({
-          date: dayjs(item.date).format('YYYY-MM-DD'),  // 格式化日期为 'YYYY-MM-DD'
-          newsCount: Number(item.newscount),  // 确保使用newsCount作为字段
+        const formattedDailyData = result.dailyData.map((item: DailyNewsData) => ({
+          date: dayjs(item.date).format('YYYY-MM-DD'),
+          newsCount: Number(item.newscount),
         }));
 
-        setData(formattedData);
+        const formattedMonthlyData = result.monthlyData.map((item: MonthlyNewsData) => ({
+          month: item.month,
+          newsCount: Number(item.count),
+        }));
+
+        setDailyData(formattedDailyData);
+        setMonthlyData(formattedMonthlyData);
       } catch (error) {
         console.error('Error fetching news data:', error);
       }
@@ -33,19 +43,26 @@ const NewsCountChart = () => {
   }, []);
 
   return (
-    <ResponsiveContainer width={960} height={400}>
-      <LineChart
-        data={data}
-        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="newsCount" stroke="#8884d8" />
-      </LineChart>
-    </ResponsiveContainer>
+    <div>
+      <h1 className='text-2xl font-bold mb-4 text-center'>新闻数量统计</h1>
+      
+      <h2>每日新闻数量</h2>
+      <ResponsiveContainer width={800} height={400}>
+        <LineChart
+          data={dailyData}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="newsCount" stroke="#8884d8" />
+        </LineChart>
+      </ResponsiveContainer>
+
+     
+    </div>
   );
 };
 
