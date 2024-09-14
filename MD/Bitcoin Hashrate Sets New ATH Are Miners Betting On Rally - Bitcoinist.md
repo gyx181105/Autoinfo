@@ -1,0 +1,5 @@
+# Bitcoin Hashrate Sets New ATH: Are Miners Betting On Rally? - Bitcoinist
+
+原文链接: https://news.google.com/rss/articles/CBMie0FVX3lxTFBaY3hFTjRUdS0yRkN1bkdqaElUTllKQ21WN3RITVJWc3JTQXJWVzdFZkpob3AzeXBqa2xfOGJtOTFDNFozUGpMSEV0ZlNLQml2Y1hLd3pzQUp3d1hObXpoRXEwdFAyWm1kQzlBMS1sMklBMVpiWUxFZHZuONIBgAFBVV95cUxPa1k3UU1vUVhmQy1lLUxVVThNOXg0YWxFQmpUZE1YWnExWE5tREt4Q0FEU1p5Nm5kdW1qYnR5eEJEcTJaSF84cEh0RUlRbFV0eHB0UFhaSzZhZG9ESkQ2X2JjWUpOZ3doMmpGNG8zLWoya1V5SlBjUmpmd0o1bnFRRQ?oc=5
+
+

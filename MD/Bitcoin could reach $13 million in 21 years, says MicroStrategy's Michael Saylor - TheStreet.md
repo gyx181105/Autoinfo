@@ -1,0 +1,5 @@
+# Bitcoin could reach $13 million in 21 years, says MicroStrategy's Michael Saylor - TheStreet
+
+原文链接: https://news.google.com/rss/articles/CBMiugFBVV95cUxOdmo5SXV5NnVjdEJEdlhmX0pLVENRdmg1djBfREpXWWVWaFRwOHZJbzNKVnVnWVhGdWZhVU1Kek40U3VWMVY2OUZIaTFMeXVOdWxkbDJMcUdDLUNld0NIMG0xYXFUd3ZoalpUXzVJRUdxaUxvQzJBNmc5MzV2bGFuTkV0c09JQ3g1ZU9PTEwxZnFkS1dPWDNTclBjQURnOU1Lby1UZVU1enhNRHpHOFZqd0U4Rk8taVZLcUE?oc=5
+
+
