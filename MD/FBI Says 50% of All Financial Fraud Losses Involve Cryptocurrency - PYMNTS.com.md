@@ -1,0 +1,5 @@
+# FBI Says 50% of All Financial Fraud Losses Involve Cryptocurrency - PYMNTS.com
+
+原文链接: https://news.google.com/rss/articles/CBMiugFBVV95cUxOS1hSSHU4U3RMMF9LT0hYRVFROXVDcld4Z3ZVMWtKVEdsektEenhnMU9uejRXbE9KSDVmR2t3NTBDYnZWYmFQZW41cU45YXh4VDNhSWhxbzJBaW56WTRDdUtzaDkxZjM2aF84VDJtOHZha3hSODBCY1QtcjFNT3B5UmZZdUpVSGVlWEoycTRybE5nZnFZTVFldWJqUlY3X1VuWXBmYlc1VkxaZTVmM0dyc3REUldKbFZIU2c?oc=5
+
+
