@@ -17,9 +17,9 @@ def load_and_split_document(file_path):
     print(f"文档分割完成，共分成 {len(splits)} 个片段")
     return splits
 
-def generate_summary_with_ollama(content):
+def generate_summary_with_ollama(content, output_file):
     print("初始化 Ollama 模型")
-    llm = Ollama(model="llama2")
+    llm = Ollama(model="llama3.1:8b")
     
     prompt_template = """请为以下内容生成一个简洁的摘要：
 
@@ -37,13 +37,22 @@ def generate_summary_with_ollama(content):
         print("摘要生成完成，内容如下：")
         print(summary)
         print("\n--- 摘要生成完成 ---")
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(summary)
+        print(f"摘要已写入文件: {output_file}")
         return summary
     except Exception as e:
         print(f"生成摘要时出错: {e}")
         return None
 
-def process_txt_folder(input_folder="TXT"):
+def process_txt_folder(input_folder="TXT", output_folder="Summaries"):
     print(f"开始处理文件夹: {input_folder}")
+    
+    # 检查输出文件夹是否存在，如果不存在则创建
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+        print(f"已创建输出文件夹: {output_folder}")
+
     for filename in os.listdir(input_folder):
         if filename.endswith(".txt"):
             file_path = os.path.join(input_folder, filename)
@@ -54,7 +63,7 @@ def process_txt_folder(input_folder="TXT"):
                 for i, doc in enumerate(docs):
                     print(f"\n处理文档片段 {i+1}/{len(docs)}")
                     print(f"片段内容预览 (前100个字符):\n{doc.page_content[:100]}...")
-                    summary = generate_summary_with_ollama(doc.page_content)
+                    summary = generate_summary_with_ollama(doc.page_content, os.path.join(output_folder, f"{filename}_summary_{i+1}.txt"))
                     if summary:
                         print(f"\n文件 {filename} 片段 {i+1} 的摘要已生成")
                     else:
@@ -63,6 +72,6 @@ def process_txt_folder(input_folder="TXT"):
                 print(f"处理文件 {filename} 时出错: {e}")
 
 if __name__ == "__main__":
-    print("程序开始执行")
+    print("程序开���执行")
     process_txt_folder()
     print("所有文件处理完成")
